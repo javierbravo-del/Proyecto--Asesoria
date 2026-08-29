@@ -23,4 +23,9 @@ public class VehicleService {
         vehicleRepository.findAll();
     }
 
+    public void getVehicleByPlate(String plate) {
+        System.out.println("Obteniendo vehiculo por placa");
+        vehicleRepository.findByPlate(plate);
+    }
+
 }

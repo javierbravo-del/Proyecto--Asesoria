@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.usuario.service.VehicleService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/vehicle")
@@ -21,4 +22,9 @@ public class VehicleController {
         vehicleService.getVehicle();
     }
 
+    @GetMapping("/{plate}")
+    public void getVehicleByPlate(@PathVariable String plate) {
+        System.out.println("obteniendo vehiculo por placa" + plate);
+        vehicleService.getVehicleByPlate(plate);
+    }
 }
